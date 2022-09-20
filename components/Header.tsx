@@ -30,6 +30,12 @@ export default function Header({}: Props) {
           bgColor='transparent'
         />
         <SocialIcon
+          url='https://facebook.com'
+          target='_blank'
+          fgColor='gray'
+          bgColor='transparent'
+        />
+        <SocialIcon
           url='https://twitter.com'
           target='_blank'
           fgColor='gray'
@@ -43,6 +49,12 @@ export default function Header({}: Props) {
         />
         <SocialIcon
           url='https://github.com'
+          target='_blank'
+          fgColor='gray'
+          bgColor='transparent'
+        />
+        <SocialIcon
+          url='http://www.thedavisexperiment.com'
           target='_blank'
           fgColor='gray'
           bgColor='transparent'
