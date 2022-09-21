@@ -28,36 +28,42 @@ export default function Header({}: Props) {
           target='_blank'
           fgColor='gray'
           bgColor='transparent'
+          className='duration-500 hover:scale-150'
         />
         <SocialIcon
           url='https://facebook.com'
           target='_blank'
           fgColor='gray'
           bgColor='transparent'
+          className='duration-500 hover:scale-150'
         />
         <SocialIcon
           url='https://twitter.com'
           target='_blank'
           fgColor='gray'
           bgColor='transparent'
+          className='duration-500 hover:scale-150'
         />
         <SocialIcon
           url='https://instagram.com'
           target='_blank'
           fgColor='gray'
           bgColor='transparent'
+          className='duration-500 hover:scale-150'
         />
         <SocialIcon
           url='https://github.com'
           target='_blank'
           fgColor='gray'
           bgColor='transparent'
+          className='duration-500 hover:scale-150'
         />
         <SocialIcon
           url='http://www.thedavisexperiment.com'
           target='_blank'
           fgColor='gray'
           bgColor='transparent'
+          className='duration-500 hover:scale-150'
         />
       </motion.div>
 
@@ -78,7 +84,7 @@ export default function Header({}: Props) {
         className='flex items-center'
       >
         <SocialIcon
-          className='cursor-pointer'
+          className='cursor-pointer duration-500 hover:scale-150'
           network='email'
           fgColor='gray'
           bgColor='transparent'
