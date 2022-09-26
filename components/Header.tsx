@@ -1,10 +1,13 @@
 import Link from 'next/link';
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
+import { Social } from '../typings';
 
-type Props = {};
+type Props = {
+  socials: Social[];
+};
 
-export default function Header({}: Props) {
+export default function Header({ socials }: Props) {
   return (
     <header className='max-w-7xl mx-auto sticky top-0 flex items-start justify-between z-20 p-5'>
       <motion.div
@@ -24,48 +27,16 @@ export default function Header({}: Props) {
         className='flex items-center'
       >
         {/* Social Icons */}
-        <SocialIcon
-          url='https://youtube.com'
-          target='_blank'
-          fgColor='gray'
-          bgColor='transparent'
-          className='duration-500 hover:scale-150'
-        />
-        <SocialIcon
-          url='https://facebook.com'
-          target='_blank'
-          fgColor='gray'
-          bgColor='transparent'
-          className='duration-500 hover:scale-150'
-        />
-        <SocialIcon
-          url='https://twitter.com'
-          target='_blank'
-          fgColor='gray'
-          bgColor='transparent'
-          className='duration-500 hover:scale-150'
-        />
-        <SocialIcon
-          url='https://instagram.com'
-          target='_blank'
-          fgColor='gray'
-          bgColor='transparent'
-          className='duration-500 hover:scale-150'
-        />
-        <SocialIcon
-          url='https://github.com'
-          target='_blank'
-          fgColor='gray'
-          bgColor='transparent'
-          className='duration-500 hover:scale-150'
-        />
-        <SocialIcon
-          url='http://www.thedavisexperiment.com'
-          target='_blank'
-          fgColor='gray'
-          bgColor='transparent'
-          className='duration-500 hover:scale-150'
-        />
+        {socials.map((social) => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            target='_blank'
+            fgColor='gray'
+            bgColor='transparent'
+            className='duration-500 hover:scale-150'
+          />
+        ))}
       </motion.div>
 
       <Link href='#contact'>
