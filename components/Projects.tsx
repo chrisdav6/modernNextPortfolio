@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion';
+import { urlFor } from '../sanity';
+import { Project } from '../typings';
 
-type Props = {};
+type Props = {
+  projects: Project[];
+};
 
-export default function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
+export default function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -16,9 +19,9 @@ export default function Projects({}: Props) {
       </h3>
 
       <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/40'>
-        {projects.map((project, idx) => (
+        {projects?.map((project, idx) => (
           <div
-            key={idx}
+            key={project._id}
             className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'
           >
             <motion.img
@@ -26,7 +29,7 @@ export default function Projects({}: Props) {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.2 }}
               viewport={{ once: true }}
-              src='/images/netflixClone.jpg'
+              src={urlFor(project?.image).url()}
               alt='Project Image'
             />
             <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
@@ -34,17 +37,11 @@ export default function Projects({}: Props) {
                 <span className='underline decoration-[#f7ab0a]'>
                   Case Study {idx + 1} of {projects.length}:
                 </span>{' '}
-                Netflix Clone
+                {project?.title}
               </h4>
 
               <p className='text-lg text-center md:text-left'>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Dolorum tenetur quo iure ea vel, dignissimos iusto recusandae
-                cumque tempora necessitatibus! Nihil, voluptate doloremque
-                consequatur vitae modi praesentium quisquam beatae, sapiente
-                iure, aspernatur fugiat autem dolor dicta numquam libero atque
-                ratione ut. Quibusdam alias voluptate nobis laboriosam quod
-                totam id sapiente.
+                {project?.summary}
               </p>
             </div>
           </div>
