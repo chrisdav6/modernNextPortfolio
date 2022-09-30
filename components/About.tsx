@@ -21,7 +21,7 @@ export default function About({ pageInfo }: Props) {
         initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.2 }}
-        src={urlFor(pageInfo.profilePic).url()}
+        src={urlFor(pageInfo?.profilePic).url()}
         alt='MF DOOM'
         className='mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]'
       />
@@ -32,7 +32,7 @@ export default function About({ pageInfo }: Props) {
           <span className='underline decoration-[#f7ab0a]'>little</span>{' '}
           background
         </h4>
-        <p className='text-base'>{pageInfo.backgroundInformation}</p>
+        <p className='text-base'>{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );
