@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
+import { urlFor } from '../sanity';
+import { PageInfo } from '../typings';
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-export default function About({}: Props) {
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,7 +21,7 @@ export default function About({}: Props) {
         initial={{ x: -200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.2 }}
-        src='/images/DoomFinalSmall.png'
+        src={urlFor(pageInfo.profilePic).url()}
         alt='MF DOOM'
         className='mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96 xl:w-[500px] xl:h-[600px]'
       />
@@ -28,20 +32,7 @@ export default function About({}: Props) {
           <span className='underline decoration-[#f7ab0a]'>little</span>{' '}
           background
         </h4>
-        <p className='text-base'>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque omnis
-          debitis, necessitatibus obcaecati repudiandae dolores corporis.
-          Aspernatur fugit pariatur numquam omnis autem, quaerat officiis error
-          sunt corrupti at? Et ab numquam ad, ex sint reiciendis aspernatur
-          voluptates ullam eius a quam voluptatum delectus totam odio
-          consequuntur dolores! Voluptas earum excepturi ipsum architecto minima
-          doloremque, doloribus quo necessitatibus esse iure accusamus in magni.
-          Fugiat dolor, nemo laboriosam et perferendis nobis quidem tempora
-          quibusdam, tempore aliquid mollitia excepturi, in obcaecati eligendi
-          voluptas. Minima nulla iste quos, perferendis omnis asperiores libero
-          molestiae vitae corporis deserunt repellat, numquam quidem excepturi
-          autem ullam porro? Aut.
-        </p>
+        <p className='text-base'>{pageInfo.backgroundInformation}</p>
       </div>
     </motion.div>
   );
