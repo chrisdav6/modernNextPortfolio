@@ -29,7 +29,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
     z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/40'
     >
       <Head>
-        <title>Chris&apos;s Portfolio</title>
+        <title>Chris Portfolio</title>
       </Head>
 
       {/* Header */}
